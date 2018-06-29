@@ -29,6 +29,14 @@ func (cm *ConfigManagementRecord) JSON() (result string) {
 	return
 }
 
+func GetApplication() *app.ApplicationRecord {
+	return Get().Application
+}
+
+func GetBuild() *bld.BuildRecord {
+	return Get().Build
+}
+
 func Get() *ConfigManagementRecord {
 	if cmRecord == nil {
 		cmRecord = &ConfigManagementRecord{app.Get(), bld.Get()}
