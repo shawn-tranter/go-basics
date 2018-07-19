@@ -9,6 +9,7 @@ import (
 var (
 	name    string = "-"
 	version string = "-"
+	is_api string = "false"
 )
 
 type APIRecord struct {
@@ -30,6 +31,10 @@ func (api *APIRecord) JSON() (result string) {
 	}
 
 	return
+}
+
+func IsAPI () bool {
+	return is_api == "true"
 }
 
 func Get() *APIRecord {
